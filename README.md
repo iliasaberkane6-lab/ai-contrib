@@ -113,13 +113,14 @@ There is no format war here. If you already have an `AGENTS.md`, put the block i
 
 Every entry carries a `confidence`:
 
-- **`verified`** — checked against the primary source by hand. Currently **53**, covering
+- **`verified`** — checked against the primary source by hand. Currently **56**, covering
   most projects a developer would actually look up: Linux Kernel, LLVM, Kubernetes, Rust,
   CPython, Django, Flutter, Firefox, NumPy, SciPy, SymPy, Sphinx, Astropy, pandas, PyTorch,
   pip, Requests, conda, napari, Polars, scikit-learn, Xarray, Kornia, curl, Homebrew,
   Ghostty, Gitea, Jellyfin, Zulip, Cilium, Drupal, GDAL, OCaml, QGIS, SearXNG,
   typescript-eslint, Bevy, Electron, KubeVirt, CloudNativePG, IREE, Joomla, EasyBuild,
-  Open edX, Wagtail, pgwatch, attrs, QEMU, NetBSD, Servo, Gentoo, Zig, ASF (org-wide).
+  Open edX, Wagtail, pgwatch, Apache Arrow, Processing, STAC, attrs, QEMU, NetBSD, Servo,
+  Gentoo, Zig, ASF (org-wide).
 - **`imported`** — derived from the excellent
   [melissawm/open-source-ai-contribution-policies](https://github.com/melissawm/open-source-ai-contribution-policies)
   list (CC0-1.0), whose author notes the classification "is, in many cases, inadequate".
@@ -192,11 +193,18 @@ Numbers from the 177 policies currently in the registry, reproducible with
   | scientific Python | NumPy, SciPy, Sphinx |
   | PyPA / PSF | pip, Requests |
   | "name the tool and the extent" | Ghostty, Polars, SearXNG |
-  | LLVM | LLVM, QGIS (QEP 408 adopts it near-verbatim) |
+  | LLVM | LLVM, QGIS (QEP 408), STAC, IREE — four adopters and counting |
 
   A project writing a policy today mostly copies a neighbour. That is the single most
   useful fact in this dataset: a machine-readable form does not have to be adopted 177
   times, it has to get into four or five templates.
+
+- **Two projects are already using `AGENTS.md` as the agent-facing channel.** Processing
+  ships one containing instructions "to prompt [AI coding assistants] to act more like
+  guides than code generators"; scikit-learn puts the same kind of directive inline in its
+  contributor docs. Apache Arrow writes a rule aimed purely at agent behaviour: "AI agents
+  should never tag or ping maintainers." This is why a policy block is valid *inside*
+  `AGENTS.md` — maintainers picked that channel before any spec told them to.
 - Disclosure requirements vary in granularity by an order of magnitude. pandas is the
   strictest: name the tool, the model and version, and the reasoning-effort setting, because
   "`claude opus 4.8 (xhigh)` tells us something, `claude` does not." Most projects that
@@ -212,7 +220,7 @@ Numbers from the 177 policies currently in the registry, reproducible with
   maintainers trying to talk to software through a channel meant for people, because no
   other channel exists. That is the gap this project is trying to close.
 
-Caveat: 124 of these entries are `imported` and reflect a third-party summary. Treat the
+Caveat: 121 of these entries are `imported` and reflect a third-party summary. Treat the
 distribution as a strong signal and any single unverified entry as a hint.
 
 ## Status
