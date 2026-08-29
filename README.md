@@ -113,11 +113,12 @@ There is no format war here. If you already have an `AGENTS.md`, put the block i
 
 Every entry carries a `confidence`:
 
-- **`verified`** — checked against the primary source by hand. Currently 31: Linux Kernel,
-  LLVM, Kubernetes, Rust, CPython, Django, NumPy, SciPy, SymPy, pandas, PyTorch, pip,
-  Requests, curl, Homebrew, Firefox, Ghostty, Gitea, Jellyfin, Zulip, Cilium,
-  typescript-eslint, Bevy, Electron, KubeVirt, attrs, QEMU, Servo, Gentoo, Zig,
-  ASF (org-wide).
+- **`verified`** — checked against the primary source by hand. Currently **39**, covering
+  most projects a developer would actually look up: Linux Kernel, LLVM, Kubernetes, Rust,
+  CPython, Django, Flutter, Firefox, NumPy, SciPy, SymPy, Sphinx, pandas, PyTorch, pip,
+  Requests, conda, napari, Polars, curl, Homebrew, Ghostty, Gitea, Jellyfin, Zulip, Cilium,
+  Drupal, GDAL, OCaml, typescript-eslint, Bevy, Electron, KubeVirt, attrs, QEMU, Servo,
+  Gentoo, Zig, ASF (org-wide).
 - **`imported`** — derived from the excellent
   [melissawm/open-source-ai-contribution-policies](https://github.com/melissawm/open-source-ai-contribution-policies)
   list (CC0-1.0), whose author notes the classification "is, in many cases, inadequate".
@@ -156,10 +157,16 @@ Numbers from the 177 policies currently in the registry, reproducible with
   AI-written replies does not count as engaging with a reviewer." Homebrew and Kubernetes
   go further and will close a PR whose author does not respond personally. The scarce
   resource being protected is maintainer attention, not code quality.
-- 14 projects explicitly ban autonomous agents, including LLVM (which names the GitHub
-  `@claude` agent), Django (which bans automated AI reviews on PRs), NumPy, SciPy, pip and
-  Requests. pip and Requests go furthest: "Accounts that exercise bot-like behavior — like
-  automated mass pull requests — will be permanently banned."
+- **19 projects explicitly ban autonomous agents, and they are starting to name products.**
+  LLVM names the GitHub `@claude` agent; pip, Requests and GDAL all name OpenClaw. Polars
+  draws the widest line — "Agents are strictly forbidden from interacting with our
+  repository", down to adding reactions. pip and Requests attach a penalty: "Accounts that
+  exercise bot-like behavior — like automated mass pull requests — will be permanently
+  banned." Agent bans are now more common than trailer rules by a factor of five.
+- **Policy text is propagating as templates.** NumPy, SciPy and Sphinx share one policy
+  almost verbatim; pip and Requests share another. A project adopting a policy today mostly
+  copies a neighbour rather than writing one, which is exactly the moment a machine-readable
+  format can ride along.
 - Disclosure requirements vary in granularity by an order of magnitude. pandas is the
   strictest: name the tool, the model and version, and the reasoning-effort setting, because
   "`claude opus 4.8 (xhigh)` tells us something, `claude` does not." Most projects that
@@ -168,7 +175,7 @@ Numbers from the 177 policies currently in the registry, reproducible with
   Codeberg with 21. Any solution that works on one forge only misses the part of the
   ecosystem with the strongest opinions.
 
-Caveat: 146 of these entries are `imported` and reflect a third-party summary. Treat the
+Caveat: 138 of these entries are `imported` and reflect a third-party summary. Treat the
 distribution as a strong signal and any single unverified entry as a hint.
 
 ## Status
