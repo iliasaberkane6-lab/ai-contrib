@@ -113,13 +113,13 @@ There is no format war here. If you already have an `AGENTS.md`, put the block i
 
 Every entry carries a `confidence`:
 
-- **`verified`** — checked against the primary source by hand. Currently **45**, covering
+- **`verified`** — checked against the primary source by hand. Currently **49**, covering
   most projects a developer would actually look up: Linux Kernel, LLVM, Kubernetes, Rust,
   CPython, Django, Flutter, Firefox, NumPy, SciPy, SymPy, Sphinx, Astropy, pandas, PyTorch,
   pip, Requests, conda, napari, Polars, scikit-learn, Xarray, Kornia, curl, Homebrew,
   Ghostty, Gitea, Jellyfin, Zulip, Cilium, Drupal, GDAL, OCaml, QGIS, SearXNG,
-  typescript-eslint, Bevy, Electron, KubeVirt, attrs, QEMU, Servo, Gentoo, Zig,
-  ASF (org-wide).
+  typescript-eslint, Bevy, Electron, KubeVirt, CloudNativePG, IREE, Joomla, EasyBuild,
+  attrs, QEMU, Servo, Gentoo, Zig, ASF (org-wide).
 - **`imported`** — derived from the excellent
   [melissawm/open-source-ai-contribution-policies](https://github.com/melissawm/open-source-ai-contribution-policies)
   list (CC0-1.0), whose author notes the classification "is, in many cases, inadequate".
@@ -149,8 +149,23 @@ Numbers from the 177 policies currently in the registry, reproducible with
 
   The Linux kernel requires the exact trailer Kubernetes and Homebrew reject, and bars
   agents from adding the `Signed-off-by:` that Homebrew also rejects. A contributor who
-  learns one convention gets rejected by the next project. There is no convention here to
-  follow — only per-project rules to look up, which is the entire case for this tool.
+  learns one convention gets rejected by the next project.
+
+- **Projects do not even agree on where disclosure goes**, let alone what it says. Four
+  incompatible channels are in use:
+
+  | channel | projects |
+  |---|---|
+  | commit trailer | Linux Kernel, LLVM, Electron, KubeVirt, CloudNativePG, IREE, QGIS |
+  | PR title prefix or label | Joomla (`[AI]` + label), Rust (`llm-assisted` label) |
+  | prose in the PR description | NumPy, SciPy, Sphinx, pandas, scikit-learn, Drupal, EasyBuild, Ghostty |
+  | forbidden in commit metadata entirely | Kubernetes, Homebrew, attrs, pip, Requests, Bevy |
+
+  And the required precision varies by an order of magnitude within a single channel:
+  CloudNativePG wants `Assisted-by: Claude Opus 4.5`, EasyBuild wants "I used GitHub
+  CoPilot (GPT-5 mini) to code this PR", pandas wants the reasoning-effort setting too.
+  There is no convention here to follow — only per-project rules to look up, which is the
+  entire case for this tool.
 
 - **Several projects that welcome AI in code forbid it in conversation.** pandas, Gitea,
   Jellyfin, typescript-eslint, SymPy and NumPy all draw the same line: use AI to write the
@@ -192,7 +207,7 @@ Numbers from the 177 policies currently in the registry, reproducible with
   maintainers trying to talk to software through a channel meant for people, because no
   other channel exists. That is the gap this project is trying to close.
 
-Caveat: 132 of these entries are `imported` and reflect a third-party summary. Treat the
+Caveat: 128 of these entries are `imported` and reflect a third-party summary. Treat the
 distribution as a strong signal and any single unverified entry as a hint.
 
 ## Status
