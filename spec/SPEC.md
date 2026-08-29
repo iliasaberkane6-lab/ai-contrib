@@ -46,7 +46,8 @@ homepage: https://...
 stance: allowed                # required: forbidden | restricted | allowed | unspecified
 autonomous_agents: forbidden   # forbidden | review_required | allowed | unspecified
 
-disclosure: required           # required | recommended | not_required | unknown
+disclosure: required           # required | required_if_substantial | recommended
+                               # | not_required | unknown
 human_in_the_loop: required    # required | recommended | not_required | unknown
 copyright_statement: true      # does the policy demand a provenance/copyright assertion
 
@@ -79,6 +80,15 @@ updated: 2026-08-29            # ISO date
 `stance: allowed` with `disclosure: required` is the single most common real-world
 configuration. It is not the same as `stance: allowed` alone, which is why disclosure is a
 separate field rather than a stance value.
+
+### disclosure
+
+`required_if_substantial` exists because a binary field was wrong. Verifying real policies
+showed a third pattern that neither `required` nor `recommended` describes: Electron
+mandates disclosure only "when AI-generated code is accepted largely as-written", KubeVirt
+only when AI "materially contributed". Consumers MUST treat it as a requirement -- the safe
+action for an agent is to disclose -- but the distinction is preserved because the projects
+drew it deliberately.
 
 ### confidence
 

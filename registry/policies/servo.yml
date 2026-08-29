@@ -5,6 +5,8 @@ version: 1
 project: "Servo"
 policy_url: "https://book.servo.org/contributing/getting-started.html#ai-contributions"
 homepage: "https://servo.org"
+repos:
+  - "servo/servo"
 stance: forbidden
 disclosure: unknown
 human_in_the_loop: unknown

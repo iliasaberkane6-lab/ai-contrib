@@ -1,10 +1,11 @@
 import { parse as parseYaml } from "yaml";
-import type { Policy, Stance, Requirement, AgentStance, Confidence } from "./types.js";
+import type { Policy, Stance, Requirement, Disclosure, AgentStance, Confidence } from "./types.js";
 
 export class PolicyError extends Error {}
 
 const STANCES = ["forbidden", "restricted", "allowed", "unspecified"];
 const REQUIREMENTS = ["required", "recommended", "not_required", "unknown"];
+const DISCLOSURES = [...REQUIREMENTS, "required_if_substantial"];
 const AGENT_STANCES = ["forbidden", "review_required", "allowed", "unspecified"];
 const CONFIDENCES = ["verified", "imported", "unverified"];
 
@@ -74,7 +75,7 @@ export function validatePolicy(raw: unknown): Policy {
     repos: stringArray(o["repos"], "repos"),
     stance,
     autonomous_agents: enumField<AgentStance>(o["autonomous_agents"], AGENT_STANCES, "autonomous_agents"),
-    disclosure: enumField<Requirement>(o["disclosure"], REQUIREMENTS, "disclosure"),
+    disclosure: enumField<Disclosure>(o["disclosure"], DISCLOSURES, "disclosure"),
     human_in_the_loop: enumField<Requirement>(o["human_in_the_loop"], REQUIREMENTS, "human_in_the_loop"),
     copyright_statement: (o["copyright_statement"] ?? undefined) as boolean | null | undefined,
     trailer: (o["trailer"] ?? undefined) as string | null | undefined,

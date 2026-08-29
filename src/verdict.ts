@@ -55,6 +55,8 @@ export function evaluate(
 
   if (policy.disclosure === "required") {
     requirements.push("Disclose AI tool use in the pull request or commit message.");
+  } else if (policy.disclosure === "required_if_substantial") {
+    requirements.push("Disclose AI tool use if the AI contribution was substantial — read the policy for where this project draws that line.");
   } else if (policy.disclosure === "recommended") {
     advisories.push("Disclosing AI tool use is recommended.");
   }

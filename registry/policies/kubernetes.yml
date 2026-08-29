@@ -5,6 +5,8 @@ version: 1
 project: "Kubernetes"
 policy_url: "https://www.kubernetes.dev/docs/guide/pull-requests/#ai-guidance"
 homepage: "https://kubernetes.io/"
+repos:
+  - "kubernetes/*"
 stance: allowed
 disclosure: required
 human_in_the_loop: required

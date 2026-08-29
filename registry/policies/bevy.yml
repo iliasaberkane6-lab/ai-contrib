@@ -5,6 +5,8 @@ version: 1
 project: "Bevy"
 policy_url: "https://bevy.org/learn/contribute/policies/ai/"
 homepage: "https://bevy.org"
+repos:
+  - "bevyengine/bevy"
 stance: forbidden
 disclosure: unknown
 human_in_the_loop: unknown

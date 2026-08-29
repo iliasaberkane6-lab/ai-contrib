@@ -5,6 +5,8 @@ version: 1
 project: "dlt"
 policy_url: "https://blog.probabl.ai/how-you-can-embrace-ai-in-your-open-source-projects-contribution-cycle-insights-from-dlt"
 homepage: "https://dlthub.com/"
+repos:
+  - "dlt-hub/dlt"
 stance: allowed
 disclosure: not_required
 human_in_the_loop: not_required

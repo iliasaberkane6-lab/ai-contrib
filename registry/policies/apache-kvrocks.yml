@@ -5,6 +5,8 @@ version: 1
 project: "Apache Kvrocks"
 policy_url: "https://kvrocks.apache.org/community/contributing/#guidelines-for-ai-assisted-contributions"
 homepage: "https://kvrocks.apache.org/"
+repos:
+  - "apache/kvrocks"
 stance: allowed
 disclosure: required
 human_in_the_loop: required

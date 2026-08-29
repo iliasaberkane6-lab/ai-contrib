@@ -86,7 +86,7 @@ forbidden_trailers: [Co-authored-by]
 Then gate pull requests on it:
 
 ```yaml
-- uses: USER/ai-contrib@v0
+- uses: iliasaberkane6-lab/ai-contrib@v0
 ```
 
 `verify` reads the commits in the PR and reports violations: an AI tool named in a
@@ -113,8 +113,8 @@ There is no format war here. If you already have an `AGENTS.md`, put the block i
 
 Every entry carries a `confidence`:
 
-- **`verified`** — checked against the primary source. Currently: Linux Kernel, LLVM,
-  attrs, Electron, KubeVirt.
+- **`verified`** — checked against the primary source. Currently 11: Linux Kernel, LLVM,
+  Rust, CPython, Django, curl, QEMU, ASF (org-wide), attrs, Electron, KubeVirt.
 - **`imported`** — derived from the excellent
   [melissawm/open-source-ai-contribution-policies](https://github.com/melissawm/open-source-ai-contribution-policies)
   list (CC0-1.0), whose author notes the classification "is, in many cases, inadequate".
@@ -132,7 +132,8 @@ what real policies need. Known gaps, honestly:
   threshold" (Electron and KubeVirt both do this; the nuance lives in `notes` for now).
 - Registry keys are `owner/repo` with the forge host stripped, so a GitHub repo and a
   Codeberg repo with the same path would collide. None currently do.
-- 72 imported entries have no repo slug and cannot be matched by lookup yet.
+- 24 imported entries have no repo slug and cannot be matched by lookup yet (down from 72;
+  the rest live on non-GitHub forges or have no public repository).
 - GCC and Godot are widely reported to have banned AI contributions but are not in the
   registry: no primary source was located. Guessing was the wrong answer.
 

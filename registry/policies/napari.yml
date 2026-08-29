@@ -5,6 +5,8 @@ version: 1
 project: "napari"
 policy_url: "https://napari.org/dev/developers/contributing/ai.html"
 homepage: "https://napari.org"
+repos:
+  - "napari/napari"
 stance: allowed
 disclosure: required
 human_in_the_loop: required

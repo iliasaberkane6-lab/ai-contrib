@@ -5,6 +5,8 @@ version: 1
 project: "GDAL"
 policy_url: "https://gdal.org/en/stable/community/ai_tool_policy.html"
 homepage: "https://gdal.org/"
+repos:
+  - "OSGeo/gdal"
 stance: allowed
 disclosure: required
 human_in_the_loop: required

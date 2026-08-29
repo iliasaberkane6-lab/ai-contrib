@@ -5,6 +5,8 @@ version: 1
 project: "chezmoi"
 policy_url: "https://www.chezmoi.io/developer-guide/"
 homepage: "https://www.chezmoi.io"
+repos:
+  - "twpayne/chezmoi"
 stance: forbidden
 disclosure: unknown
 human_in_the_loop: unknown

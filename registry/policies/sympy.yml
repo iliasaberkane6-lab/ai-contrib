@@ -5,6 +5,8 @@ version: 1
 project: "SymPy"
 policy_url: "https://docs.sympy.org/dev/contributing/ai-generated-code-policy.html"
 homepage: "https://www.sympy.org"
+repos:
+  - "sympy/sympy"
 stance: allowed
 disclosure: required
 human_in_the_loop: required

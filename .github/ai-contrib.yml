@@ -1,7 +1,7 @@
 # ai-contrib declares its own policy. Dogfooding: `ai-contrib check .` reads this.
 version: 1
 project: ai-contrib
-policy_url: https://github.com/USER/ai-contrib/blob/main/CONTRIBUTING.md#ai-assisted-contributions
+policy_url: https://github.com/iliasaberkane6-lab/ai-contrib/blob/main/CONTRIBUTING.md#ai-assisted-contributions
 stance: allowed
 autonomous_agents: review_required
 disclosure: required
@@ -14,6 +14,6 @@ notes: >
   submit. Registry entries changed from `imported` to `verified` must cite the primary
   source you actually read.
 sources:
-  - https://github.com/USER/ai-contrib/blob/main/CONTRIBUTING.md
+  - https://github.com/iliasaberkane6-lab/ai-contrib/blob/main/CONTRIBUTING.md
 confidence: verified
 updated: 2026-08-29

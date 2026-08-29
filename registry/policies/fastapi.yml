@@ -5,6 +5,8 @@ version: 1
 project: "FastAPI"
 policy_url: "https://tiangolo.com/open-source/contributing/#automated-code-and-ai"
 homepage: "https://fastapi.tiangolo.com"
+repos:
+  - "fastapi/fastapi"
 stance: allowed
 disclosure: not_required
 human_in_the_loop: required

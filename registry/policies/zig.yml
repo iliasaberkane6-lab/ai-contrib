@@ -5,6 +5,8 @@ version: 1
 project: "Zig"
 policy_url: "https://ziglang.org/code-of-conduct/#strict-no-llm-no-ai-policy"
 homepage: "https://ziglang.org"
+repos:
+  - "ziglang/zig"
 stance: forbidden
 disclosure: unknown
 human_in_the_loop: unknown

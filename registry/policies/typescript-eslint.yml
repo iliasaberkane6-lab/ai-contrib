@@ -5,6 +5,8 @@ version: 1
 project: "typescript-eslint"
 policy_url: "https://typescript-eslint.io/contributing/ai-policy/"
 homepage: "https://typescript-eslint.io/"
+repos:
+  - "typescript-eslint/typescript-eslint"
 stance: allowed
 disclosure: not_required
 human_in_the_loop: required

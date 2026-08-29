@@ -5,6 +5,8 @@ version: 1
 project: "pip-tools"
 policy_url: "https://pip-tools.readthedocs.io/en/latest/contributing/#project-contribution-guidelines"
 homepage: "https://pip-tools.readthedocs.io"
+repos:
+  - "jazzband/pip-tools"
 stance: allowed
 disclosure: not_required
 human_in_the_loop: required

@@ -5,6 +5,8 @@ version: 1
 project: "Pallets"
 policy_url: "https://palletsprojects.com/contributing/llm-ai"
 homepage: "https://palletsprojects.com/"
+repos:
+  - "pallets/*"
 stance: forbidden
 disclosure: unknown
 human_in_the_loop: unknown

@@ -5,6 +5,8 @@ version: 1
 project: "Oxide"
 policy_url: "https://rfd.shared.oxide.computer/rfd/0576"
 homepage: "https://oxide.computer/"
+repos:
+  - "oxidecomputer/*"
 stance: allowed
 disclosure: unknown
 human_in_the_loop: required

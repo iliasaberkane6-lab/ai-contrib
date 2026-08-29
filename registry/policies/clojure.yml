@@ -5,6 +5,8 @@ version: 1
 project: "Clojure"
 policy_url: "https://clojure.org/dev/contributor_agreement#_no_generated_code"
 homepage: "https://clojure.org"
+repos:
+  - "clojure/clojure"
 stance: forbidden
 disclosure: unknown
 human_in_the_loop: unknown

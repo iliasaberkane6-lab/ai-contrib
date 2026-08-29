@@ -5,6 +5,8 @@ version: 1
 project: "SciPy"
 policy_url: "https://scipy.github.io/devdocs/dev/conduct/ai_policy.html"
 homepage: "https://scipy.org"
+repos:
+  - "scipy/scipy"
 stance: allowed
 disclosure: required
 human_in_the_loop: required

@@ -1,5 +1,7 @@
 export type Stance = "forbidden" | "restricted" | "allowed" | "unspecified";
 export type Requirement = "required" | "recommended" | "not_required" | "unknown";
+/** `disclosure` additionally allows a materiality threshold. See spec/SPEC.md. */
+export type Disclosure = Requirement | "required_if_substantial";
 export type AgentStance = "forbidden" | "review_required" | "allowed" | "unspecified";
 export type Confidence = "verified" | "imported" | "unverified";
 
@@ -11,7 +13,7 @@ export interface Policy {
   repos?: string[];
   stance: Stance;
   autonomous_agents?: AgentStance;
-  disclosure?: Requirement;
+  disclosure?: Disclosure;
   human_in_the_loop?: Requirement;
   copyright_statement?: boolean | null;
   trailer?: string | null;

@@ -5,6 +5,8 @@ version: 1
 project: "Pandas"
 policy_url: "https://pandas.pydata.org/docs/dev/development/contributing.html#automated-contributions-policy"
 homepage: "https://pandas.pydata.org"
+repos:
+  - "pandas-dev/pandas"
 stance: allowed
 disclosure: required
 human_in_the_loop: required

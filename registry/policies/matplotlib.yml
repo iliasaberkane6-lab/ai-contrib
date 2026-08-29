@@ -5,6 +5,8 @@ version: 1
 project: "Matplotlib"
 policy_url: "https://matplotlib.org/devdocs/devel/contribute.html#generative-ai"
 homepage: "https://matplotlib.org"
+repos:
+  - "matplotlib/matplotlib"
 stance: allowed
 disclosure: required
 human_in_the_loop: required

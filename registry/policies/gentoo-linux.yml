@@ -5,6 +5,8 @@ version: 1
 project: "Gentoo Linux"
 policy_url: "https://wiki.gentoo.org/wiki/Project:Council/AI_policy"
 homepage: "https://www.gentoo.org/"
+repos:
+  - "gentoo/gentoo"
 stance: forbidden
 disclosure: unknown
 human_in_the_loop: unknown

@@ -5,6 +5,8 @@ version: 1
 project: "Joomla"
 policy_url: "https://developer.joomla.org/generative-ai-policy.html"
 homepage: "https://www.joomla.org/"
+repos:
+  - "joomla/joomla-cms"
 stance: allowed
 disclosure: required
 human_in_the_loop: required

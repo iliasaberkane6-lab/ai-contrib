@@ -5,6 +5,8 @@ version: 1
 project: "Elementary OS"
 policy_url: "https://docs.elementary.io/contributor-guide/development/generative-ai-policy"
 homepage: "https://elementary.io/"
+repos:
+  - "elementary/*"
 stance: forbidden
 disclosure: unknown
 human_in_the_loop: unknown

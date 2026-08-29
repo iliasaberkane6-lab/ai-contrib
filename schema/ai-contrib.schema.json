@@ -13,7 +13,7 @@
     "repos": { "type": "array", "items": { "type": "string" }, "description": "Repository slugs or globs this policy applies to, e.g. apache/*" },
     "stance": { "enum": ["forbidden", "restricted", "allowed", "unspecified"] },
     "autonomous_agents": { "enum": ["forbidden", "review_required", "allowed", "unspecified"] },
-    "disclosure": { "enum": ["required", "recommended", "not_required", "unknown"] },
+    "disclosure": { "enum": ["required", "required_if_substantial", "recommended", "not_required", "unknown"] },
     "human_in_the_loop": { "enum": ["required", "recommended", "not_required", "unknown"] },
     "copyright_statement": { "type": ["boolean", "null"] },
     "trailer": { "type": ["string", "null"] },

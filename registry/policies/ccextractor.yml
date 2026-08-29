@@ -5,6 +5,8 @@ version: 1
 project: "CCExtractor"
 policy_url: "https://ccextractor.org/public/gsoc/ai_policy/"
 homepage: "https://ccextractor.org/"
+repos:
+  - "CCExtractor/ccextractor"
 stance: allowed
 disclosure: required
 human_in_the_loop: required

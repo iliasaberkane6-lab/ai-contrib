@@ -5,6 +5,8 @@ version: 1
 project: "OpenJDK"
 policy_url: "https://openjdk.org/legal/ai"
 homepage: "https://openjdk.org/"
+repos:
+  - "openjdk/jdk"
 stance: forbidden
 disclosure: unknown
 human_in_the_loop: unknown

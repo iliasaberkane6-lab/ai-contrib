@@ -5,6 +5,8 @@ version: 1
 project: "EasyBuild"
 policy_url: "https://docs.easybuild.io/policies/ai/"
 homepage: "https://easybuild.io/"
+repos:
+  - "easybuilders/easybuild"
 stance: allowed
 disclosure: required
 human_in_the_loop: required

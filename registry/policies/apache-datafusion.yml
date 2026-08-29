@@ -5,6 +5,8 @@ version: 1
 project: "Apache DataFusion"
 policy_url: "https://datafusion.apache.org/contributor-guide/index.html#ai-assisted-contributions"
 homepage: "https://datafusion.apache.org"
+repos:
+  - "apache/datafusion"
 stance: allowed
 disclosure: not_required
 human_in_the_loop: required

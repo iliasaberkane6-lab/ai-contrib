@@ -5,6 +5,8 @@ version: 1
 project: "Telegraf"
 policy_url: "https://www.influxdata.com/ai-generated-code-contributions-policy/"
 homepage: "https://influxdata.com/telegraf"
+repos:
+  - "influxdata/telegraf"
 stance: allowed
 disclosure: unknown
 human_in_the_loop: required

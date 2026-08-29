@@ -5,6 +5,8 @@ version: 1
 project: "Chimera Linux"
 policy_url: "https://gts.chimera-linux.org/@chimera/statuses/01KK78VSB4G5S75STYEY3YTR2H"
 homepage: "https://chimera-linux.org"
+repos:
+  - "chimera-linux/cports"
 stance: forbidden
 disclosure: unknown
 human_in_the_loop: unknown

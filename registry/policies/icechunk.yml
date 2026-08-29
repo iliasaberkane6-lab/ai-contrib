@@ -5,6 +5,8 @@ version: 1
 project: "Icechunk"
 policy_url: "https://icechunk.io/en/latest/ai-policy/"
 homepage: "https://icechunk.io/en/latest/"
+repos:
+  - "earth-mover/icechunk"
 stance: allowed
 disclosure: not_required
 human_in_the_loop: required

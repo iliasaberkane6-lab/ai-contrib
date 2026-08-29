@@ -5,6 +5,8 @@ version: 1
 project: "Jellyfin"
 policy_url: "https://jellyfin.org/docs/general/contributing/llm-policies/"
 homepage: "https://jellyfin.org/"
+repos:
+  - "jellyfin/*"
 stance: allowed
 disclosure: not_required
 human_in_the_loop: required

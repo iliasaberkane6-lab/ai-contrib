@@ -5,6 +5,8 @@ version: 1
 project: "Glasgow Interface Explorer"
 policy_url: "https://glasgow-embedded.org/latest/contribute.html#contributing-code-or-documentation"
 homepage: "https://glasgow-embedded.org"
+repos:
+  - "GlasgowEmbedded/glasgow"
 stance: forbidden
 disclosure: unknown
 human_in_the_loop: unknown

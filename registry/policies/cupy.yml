@@ -5,6 +5,8 @@ version: 1
 project: "CuPy"
 policy_url: "https://docs.cupy.dev/en/stable/contribution.html#ai-policies"
 homepage: "https://cupy.dev"
+repos:
+  - "cupy/cupy"
 stance: allowed
 disclosure: not_required
 human_in_the_loop: required

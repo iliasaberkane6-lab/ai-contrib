@@ -5,6 +5,8 @@ version: 1
 project: "Wagtail"
 policy_url: "https://docs.wagtail.org/en/latest/contributing/general_guidelines.html#general-coding-guidelines"
 homepage: "https://wagtail.org/"
+repos:
+  - "wagtail/wagtail"
 stance: allowed
 disclosure: required
 human_in_the_loop: required

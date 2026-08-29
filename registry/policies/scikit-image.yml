@@ -5,6 +5,8 @@ version: 1
 project: "scikit-image"
 policy_url: "https://scikit-image.org/docs/dev/development/contribute.html#ai-policy"
 homepage: "https://scikit-image.org/"
+repos:
+  - "scikit-image/scikit-image"
 stance: allowed
 disclosure: required
 human_in_the_loop: required

@@ -5,6 +5,8 @@ version: 1
 project: "Asahi Linux"
 policy_url: "https://asahilinux.org/docs/project/policies/slop/"
 homepage: "https://asahilinux.org"
+repos:
+  - "AsahiLinux/linux"
 stance: forbidden
 disclosure: unknown
 human_in_the_loop: unknown

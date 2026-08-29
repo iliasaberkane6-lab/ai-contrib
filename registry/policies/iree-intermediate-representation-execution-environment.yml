@@ -5,6 +5,8 @@ version: 1
 project: "IREE (Intermediate Representation Execution Environment)"
 policy_url: "https://iree.dev/developers/general/contributing/#ai-tool-use"
 homepage: "https://iree.dev/"
+repos:
+  - "iree-org/iree"
 stance: allowed
 disclosure: required
 human_in_the_loop: required

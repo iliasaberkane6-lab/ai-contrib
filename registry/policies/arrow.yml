@@ -5,6 +5,8 @@ version: 1
 project: "Arrow"
 policy_url: "https://arrow.apache.org/docs/dev/developers/overview.html#ai-generated-code"
 homepage: "https://arrow.apache.org"
+repos:
+  - "apache/arrow"
 stance: allowed
 disclosure: required
 human_in_the_loop: required

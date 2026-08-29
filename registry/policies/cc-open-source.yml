@@ -5,6 +5,8 @@ version: 1
 project: "CC Open Source"
 policy_url: "https://opensource.creativecommons.org/contributing-code/"
 homepage: "https://opensource.creativecommons.org/"
+repos:
+  - "creativecommons/*"
 stance: forbidden
 disclosure: unknown
 human_in_the_loop: unknown

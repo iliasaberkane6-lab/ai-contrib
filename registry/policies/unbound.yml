@@ -5,6 +5,8 @@ version: 1
 project: "Unbound"
 policy_url: "https://nlnetlabs.nl/llm-policy/"
 homepage: "https://nlnetlabs.nl/projects/unbound/about/"
+repos:
+  - "NLnetLabs/unbound"
 stance: forbidden
 disclosure: unknown
 human_in_the_loop: unknown

@@ -5,6 +5,8 @@ version: 1
 project: "NumPy"
 policy_url: "https://numpy.org/devdocs/dev/ai_policy.html"
 homepage: "https://numpy.org"
+repos:
+  - "numpy/numpy"
 stance: allowed
 disclosure: required
 human_in_the_loop: required
