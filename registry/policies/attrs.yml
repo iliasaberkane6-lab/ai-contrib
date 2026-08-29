@@ -1,0 +1,22 @@
+version: 1
+project: attrs
+policy_url: https://github.com/python-attrs/attrs/blob/main/.github/AI_POLICY.md
+homepage: https://github.com/python-attrs/attrs
+repos:
+  - github.com/python-attrs/attrs
+stance: allowed
+disclosure: not_required
+human_in_the_loop: required
+copyright_statement: true
+trailer: null
+forbidden_trailers:
+  - Co-authored-by
+notes: >
+  The project does not police how PRs are authored, but a pull request listing an LLM
+  product as co-author cannot be merged and will be closed without discussion, for
+  copyright reasons. Remove any LLM co-author tags and take full ownership of every line.
+  "An LLM wrote it" is not an acceptable response to critique.
+sources:
+  - https://github.com/python-attrs/attrs/blob/main/.github/AI_POLICY.md
+confidence: verified
+updated: 2026-08-29

@@ -1,0 +1,21 @@
+version: 1
+project: LLVM
+policy_url: https://llvm.org/docs/AIToolPolicy.html
+homepage: https://llvm.org/
+repos:
+  - github.com/llvm/llvm-project
+stance: allowed
+autonomous_agents: forbidden
+disclosure: required
+human_in_the_loop: required
+copyright_statement: false
+trailer: Assisted-by
+notes: >
+  Contributors must read and review all LLM-generated content before requesting review,
+  and must label contributions containing substantial tool-generated content. Agents that
+  act in LLVM's digital spaces without human approval are banned. Using AI tools to fix
+  issues labelled "good first issue" is forbidden.
+sources:
+  - https://llvm.org/docs/AIToolPolicy.html
+confidence: verified
+updated: 2026-08-29

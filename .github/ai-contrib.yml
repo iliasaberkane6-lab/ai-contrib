@@ -1,0 +1,19 @@
+# ai-contrib declares its own policy. Dogfooding: `ai-contrib check .` reads this.
+version: 1
+project: ai-contrib
+policy_url: https://github.com/USER/ai-contrib/blob/main/CONTRIBUTING.md#ai-assisted-contributions
+stance: allowed
+autonomous_agents: review_required
+disclosure: required
+human_in_the_loop: required
+copyright_statement: false
+trailer: Assisted-by
+notes: >
+  AI-assisted contributions are welcome and expected -- this project exists to make them
+  legible. Declare them with an Assisted-by trailer, and be able to explain every line you
+  submit. Registry entries changed from `imported` to `verified` must cite the primary
+  source you actually read.
+sources:
+  - https://github.com/USER/ai-contrib/blob/main/CONTRIBUTING.md
+confidence: verified
+updated: 2026-08-29

@@ -1,0 +1,22 @@
+version: 1
+project: Electron
+policy_url: https://github.com/electron/governance/blob/main/policy/ai.md
+homepage: https://www.electronjs.org/
+repos:
+  - github.com/electron/electron
+  - github.com/electron/*
+stance: allowed
+autonomous_agents: forbidden
+disclosure: recommended
+human_in_the_loop: required
+copyright_statement: false
+trailer: Assisted-By
+notes: >
+  There must be a human in the loop: contributors must review, understand, and be able to
+  explain all content they submit. Disclosure becomes MANDATORY when AI-generated code is
+  accepted largely as-written. Unauthorized automated agents that act without human input
+  (bots that post comments or open PRs autonomously) are prohibited.
+sources:
+  - https://github.com/electron/governance/blob/main/policy/ai.md
+confidence: verified
+updated: 2026-08-29

@@ -1,0 +1,22 @@
+version: 1
+project: KubeVirt
+policy_url: https://github.com/kubevirt/community/blob/main/ai-contribution-policy.md
+homepage: https://kubevirt.io/
+repos:
+  - github.com/kubevirt/*
+stance: allowed
+autonomous_agents: review_required
+disclosure: recommended
+human_in_the_loop: required
+copyright_statement: false
+trailer: Assisted-by
+notes: >
+  AI tools are accepted as development assistants. Contributors SHOULD disclose AI tool
+  use when it materially contributed (not for IDE autocomplete or substantially rewritten
+  content). Co-authored-by trailers added automatically by AI tools are acceptable.
+  Contributors must review and understand every line and take full ownership. Low-effort
+  submissions that appear to be unreviewed AI output may be rejected without feedback.
+sources:
+  - https://github.com/kubevirt/community/blob/main/ai-contribution-policy.md
+confidence: verified
+updated: 2026-08-29

@@ -1,0 +1,16 @@
+{
+  "_comment": "Claude Code PreToolUse hook: refuse to open a PR into a repo that does not accept agent contributions. Drop into ~/.claude/settings.json.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -qE '\\b(gh pr create|git push)\\b'; then npx --yes ai-contrib check . --autonomous || exit 2; fi"
+          }
+        ]
+      }
+    ]
+  }
+}

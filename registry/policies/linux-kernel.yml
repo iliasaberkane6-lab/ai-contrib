@@ -1,0 +1,22 @@
+version: 1
+project: Linux Kernel
+policy_url: https://www.kernel.org/doc/html/next/process/coding-assistants.html
+homepage: https://kernel.org/
+repos:
+  - github.com/torvalds/linux
+stance: allowed
+autonomous_agents: review_required
+disclosure: required
+human_in_the_loop: required
+copyright_statement: true
+trailer: Assisted-by
+forbidden_trailers:
+  - Signed-off-by
+notes: >
+  Trailer format is "Assisted-by: LLM [TOOL1] [TOOL2]". Only humans can certify the
+  Developer Certificate of Origin, so the human submitter adds their own Signed-off-by
+  and is solely responsible for reviewing all AI-generated code.
+sources:
+  - https://www.kernel.org/doc/html/next/process/coding-assistants.html
+confidence: verified
+updated: 2026-08-29

@@ -1,0 +1,54 @@
+name: "ai-contrib policy gate"
+description: "Check that a pull request complies with this project's AI contribution policy."
+author: "ai-contrib"
+branding: { icon: "shield", color: "purple" }
+
+inputs:
+  range:
+    description: "Git range to verify. Defaults to the pull request's commits."
+    required: false
+    default: ""
+  fail-on-violation:
+    description: "Fail the job when violations are found. Set to false to report only."
+    required: false
+    default: "true"
+  version:
+    description: "npm version spec of the ai-contrib CLI to run."
+    required: false
+    default: "latest"
+
+outputs:
+  violations:
+    description: "Number of policy violations found."
+    value: ${{ steps.verify.outputs.violations }}
+
+runs:
+  using: composite
+  steps:
+    - name: Verify AI contribution policy
+      id: verify
+      shell: bash
+      run: |
+        set -o pipefail
+        RANGE="${{ inputs.range }}"
+        if [ -z "$RANGE" ]; then
+          if [ -n "${{ github.base_ref }}" ]; then
+            git fetch --no-tags --depth=50 origin "${{ github.base_ref }}" || true
+            RANGE="origin/${{ github.base_ref }}..HEAD"
+          else
+            RANGE="HEAD~1..HEAD"
+          fi
+        fi
+        echo "Verifying $RANGE"
+        set +e
+        npx --yes ai-contrib@${{ inputs.version }} verify "$RANGE" --json > result.json
+        CODE=$?
+        set -e
+        if [ "$CODE" != "0" ] && [ "$CODE" != "6" ]; then
+          echo "ai-contrib failed with exit $CODE"; cat result.json 2>/dev/null; exit 1
+        fi
+        COUNT=$(node -e "process.stdout.write(String((require('./result.json').violations||[]).length))")
+        echo "violations=$COUNT" >> "$GITHUB_OUTPUT"
+        npx --yes ai-contrib@${{ inputs.version }} verify "$RANGE" | tee -a "$GITHUB_STEP_SUMMARY"
+        rm -f result.json
+        if [ "$COUNT" != "0" ] && [ "${{ inputs.fail-on-violation }}" = "true" ]; then exit 1; fi

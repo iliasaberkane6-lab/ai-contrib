@@ -1,0 +1,26 @@
+{
+  "name": "ai-contrib",
+  "version": "0.1.0",
+  "description": "Machine-readable AI contribution policies for open source repositories. Know the rules before the agent opens the PR.",
+  "keywords": ["ai-policy", "open-source", "governance", "coding-agent", "contribution-policy", "assisted-by", "agents"],
+  "license": "MIT",
+  "type": "module",
+  "bin": { "ai-contrib": "dist/cli.js" },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+    "./registry": "./registry/policies/"
+  },
+  "files": ["dist", "registry", "schema", "spec", "README.md", "LICENSE"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test",
+    "import-registry": "node scripts/import-melissawm.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": { "yaml": "^2.6.0" },
+  "devDependencies": { "typescript": "^5.7.0", "@types/node": "^22.10.0" },
+  "repository": { "type": "git", "url": "git+https://github.com/USER/ai-contrib.git" }
+}

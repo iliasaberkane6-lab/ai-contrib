@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-contrib.dev/schema/v1.json",
+  "title": "ai-contrib policy",
+  "type": "object",
+  "required": ["version", "stance"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "const": 1 },
+    "project": { "type": "string" },
+    "policy_url": { "type": "string", "format": "uri" },
+    "homepage": { "type": "string", "format": "uri" },
+    "repos": { "type": "array", "items": { "type": "string" }, "description": "Repository slugs or globs this policy applies to, e.g. apache/*" },
+    "stance": { "enum": ["forbidden", "restricted", "allowed", "unspecified"] },
+    "autonomous_agents": { "enum": ["forbidden", "review_required", "allowed", "unspecified"] },
+    "disclosure": { "enum": ["required", "recommended", "not_required", "unknown"] },
+    "human_in_the_loop": { "enum": ["required", "recommended", "not_required", "unknown"] },
+    "copyright_statement": { "type": ["boolean", "null"] },
+    "trailer": { "type": ["string", "null"] },
+    "forbidden_trailers": { "type": "array", "items": { "type": "string" } },
+    "scope": {
+      "type": "object",
+      "additionalProperties": { "enum": ["forbidden", "restricted", "allowed", "unspecified"] }
+    },
+    "notes": { "type": "string" },
+    "sources": { "type": "array", "items": { "type": "string" } },
+    "confidence": { "enum": ["verified", "imported", "unverified"] },
+    "updated": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+  }
+}
