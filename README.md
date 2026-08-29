@@ -123,6 +123,28 @@ Every entry carries a `confidence`:
 The CLI prints the confidence with every answer. **Verifying an entry is the best first
 contribution to this project** — see [registry/README.md](registry/README.md).
 
+## What the registry shows
+
+Numbers from the 177 policies currently in the registry, reproducible with
+`ai-contrib list --json`:
+
+- **97 of 177 projects (55%) do not accept AI-assisted contributions at all.** The
+  loudest debate is about how to disclose AI use; the majority answer is "don't".
+- Among the 77 that do allow it, **75 require a human in the loop** — the one thing
+  the ecosystem agrees on, at 97%.
+- Only 44 of those 77 require disclosure. Human responsibility is near-universal;
+  disclosure is not.
+- Just 4 projects mandate a specific commit trailer and 2 forbid one — and those two
+  groups contradict each other. The Linux kernel requires `Assisted-by:` and bars agents
+  from adding `Signed-off-by:`; attrs closes any PR naming an LLM in `Co-authored-by:`.
+  There is no convention to follow, only per-project rules to look up.
+- **23% of registry entries are not on GitHub** (36 of 158 with a known repository),
+  led by Codeberg with 21. Any solution that only works on one forge misses the part of
+  the ecosystem with the strongest opinions.
+
+Caveat: 166 of these entries are `imported` and reflect a third-party summary. Treat the
+distribution as a strong signal and any single entry as a hint.
+
 ## Status
 
 v0.1. The spec ([spec/SPEC.md](spec/SPEC.md)) is small on purpose and will change based on
