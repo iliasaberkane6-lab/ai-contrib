@@ -11,21 +11,18 @@ In short: add an `Assisted-by:` trailer, and be able to explain every line you s
 
 ## Good first contributions
 
-**Verify a registry entry.** 172 of 177 entries are `imported` — machine-translated from a
-third-party list, missing trailers and agent rules. Pick one, read its actual policy, fix
-the fields, set `confidence: verified`. One entry per PR is fine and welcome. See
-[registry/README.md](registry/README.md).
+Open issues are labelled, and the four below are filed and ready to pick up:
 
-**Add a missing project.** GCC and Godot are both widely reported to have banned AI
-contributions in mid-2026, but neither is in the registry because no primary source was
-located. If you can find the authoritative document, that is a valuable PR.
-
-**Add repo slugs.** 72 imported entries have no `repos:` field, so lookup cannot find them.
-Adding the right slug makes an entry reachable.
-
-**Write an adapter.** The contributor-side check should work in more places: a git
-`pre-push` hook, a Codex/Cursor equivalent of `examples/claude-code-hook.json`, a
-pre-commit hook.
+- **[#1](../../issues/1) Verify a registry entry.** 156 of 177 entries are `imported` —
+  machine-translated from a third-party list, missing trailers and agent rules. One entry
+  per PR is fine and welcome. See [registry/README.md](registry/README.md).
+- **[#2](../../issues/2) Add GCC and Godot.** Both are widely reported to have restricted
+  AI contributions in mid-2026, but no primary source was located, so neither is in the
+  registry. Guessing was rejected as the wrong answer.
+- **[#3](../../issues/3) Add repo slugs to 24 unmatchable entries**, so lookup can find
+  them.
+- **[#4](../../issues/4) Write an adapter** — a Codex or Cursor equivalent of
+  `examples/claude-code-hook.json`, or a plain git `pre-push` hook.
 
 ## Development
 
