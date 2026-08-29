@@ -113,14 +113,14 @@ There is no format war here. If you already have an `AGENTS.md`, put the block i
 
 Every entry carries a `confidence`:
 
-- **`verified`** — checked against the primary source by hand. Currently **56**, covering
+- **`verified`** — checked against the primary source by hand. Currently **59**, covering
   most projects a developer would actually look up: Linux Kernel, LLVM, Kubernetes, Rust,
   CPython, Django, Flutter, Firefox, NumPy, SciPy, SymPy, Sphinx, Astropy, pandas, PyTorch,
   pip, Requests, conda, napari, Polars, scikit-learn, Xarray, Kornia, curl, Homebrew,
   Ghostty, Gitea, Jellyfin, Zulip, Cilium, Drupal, GDAL, OCaml, QGIS, SearXNG,
   typescript-eslint, Bevy, Electron, KubeVirt, CloudNativePG, IREE, Joomla, EasyBuild,
-  Open edX, Wagtail, pgwatch, Apache Arrow, Processing, STAC, attrs, QEMU, NetBSD, Servo,
-  Gentoo, Zig, ASF (org-wide).
+  Open edX, Wagtail, pgwatch, Apache Arrow, Processing, STAC, Ansible, Icechunk, TorchGeo,
+  attrs, QEMU, NetBSD, Servo, Gentoo, Zig, ASF (org-wide).
 - **`imported`** — derived from the excellent
   [melissawm/open-source-ai-contribution-policies](https://github.com/melissawm/open-source-ai-contribution-policies)
   list (CC0-1.0), whose author notes the classification "is, in many cases, inadequate".
@@ -162,6 +162,7 @@ Numbers from the 177 policies currently in the registry, reproducible with
   | prose in the PR description | NumPy, SciPy, Sphinx, pandas, scikit-learn, Drupal, EasyBuild, Ghostty |
   | forbidden in commit metadata entirely | Kubernetes, Homebrew, attrs, pip, Requests, Bevy |
   | a prescribed sentence | Wagtail ("This code was reviewed and verified by me") |
+  | a graded PR-template declaration | TorchGeo (no AI / AI-assisted / AI-generated) |
 
   The sharpest single illustration: Open edX's policy recommends
   `Co-authored-by: Claude <claude@anthropic.com>` by name. attrs, pip, Requests, Kubernetes,
@@ -194,6 +195,7 @@ Numbers from the 177 policies currently in the registry, reproducible with
   | PyPA / PSF | pip, Requests |
   | "name the tool and the extent" | Ghostty, Polars, SearXNG |
   | LLVM | LLVM, QGIS (QEP 408), STAC, IREE — four adopters and counting |
+  | pydata / earth-mover | Xarray, Icechunk |
 
   A project writing a policy today mostly copies a neighbour. That is the single most
   useful fact in this dataset: a machine-readable form does not have to be adopted 177
@@ -220,7 +222,7 @@ Numbers from the 177 policies currently in the registry, reproducible with
   maintainers trying to talk to software through a channel meant for people, because no
   other channel exists. That is the gap this project is trying to close.
 
-Caveat: 121 of these entries are `imported` and reflect a third-party summary. Treat the
+Caveat: 118 of these entries are `imported` and reflect a third-party summary. Treat the
 distribution as a strong signal and any single unverified entry as a hint.
 
 ## Status

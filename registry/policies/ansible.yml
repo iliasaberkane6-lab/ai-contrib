@@ -1,0 +1,24 @@
+version: 1
+project: Ansible
+policy_url: https://docs.ansible.com/projects/ansible/latest/community/ai_policy.html
+homepage: https://www.ansible.com/
+repos:
+  - github.com/ansible/*
+stance: allowed
+autonomous_agents: forbidden
+disclosure: required_if_substantial
+human_in_the_loop: required
+copyright_statement: true
+trailer: Assisted-by
+notes: >
+  One of the few policies drafted with RFC 2119 keywords. Contributors MAY use AI tools
+  provided they take full responsibility. Disclosure SHOULD happen when a significant part
+  of the contribution is taken from AI output without significant changes; grammar,
+  spelling and stylistic corrections need none. A short "Assisted-by:" commit trailer is
+  offered as recommended form, not required. "Any autonomous contributions submitted by AI
+  tools MAY be rejected by resource maintainers without prior justification", and even
+  maintainers' own automation SHOULD be manually authorised.
+sources:
+  - https://docs.ansible.com/projects/ansible/latest/community/ai_policy.html
+confidence: verified
+updated: 2026-08-29
