@@ -148,9 +148,12 @@ async function main(argv: string[]): Promise<number> {
   return verdict.exitCode;
 }
 
+// Set exitCode rather than calling process.exit(): exit() discards stdout writes that
+// have not flushed yet, which truncates `--json` at the 64 KB pipe buffer. The registry
+// listing is larger than that, and truncated JSON is worse than no JSON.
 main(process.argv)
-  .then((code) => process.exit(code))
+  .then((code) => { process.exitCode = code; })
   .catch((err) => {
     console.error(err instanceof PolicyError ? `policy error: ${err.message}` : `error: ${(err as Error).message}`);
-    process.exit(1);
+    process.exitCode = 1;
   });

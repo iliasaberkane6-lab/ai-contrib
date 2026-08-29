@@ -57,3 +57,15 @@ test("verify: declared AI assistance in a forbidden project is a violation", () 
   assert.equal(v.length, 1);
   assert.equal(v[0].rule, "stance");
 });
+
+test("cli: large --json output survives a pipe (no process.exit truncation)", async () => {
+  const { execFile } = await import("node:child_process");
+  const { promisify } = await import("node:util");
+  const { stdout } = await promisify(execFile)(
+    process.execPath, ["dist/cli.js", "list", "--json"],
+    { maxBuffer: 32 * 1024 * 1024 },
+  );
+  assert.ok(stdout.length > 65536, `expected output past the 64 KB pipe buffer, got ${stdout.length}`);
+  const parsed = JSON.parse(stdout);           // throws if truncated
+  assert.ok(parsed.length > 100);
+});
