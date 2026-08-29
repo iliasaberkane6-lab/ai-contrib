@@ -1,0 +1,26 @@
+version: 1
+project: Open edX
+policy_url: https://github.com/openedx/.github/blob/master/AI_POLICY.md
+homepage: https://openedx.org/
+repos:
+  - github.com/openedx/*
+stance: restricted
+autonomous_agents: forbidden
+disclosure: required_if_substantial
+human_in_the_loop: required
+copyright_statement: false
+trailer: Co-authored-by
+notes: >
+  The only vendor allowlist found in this registry: "The Open edX community welcomes the
+  use of AI tools as part of your contribution workflow, but only the following tools:
+  Microsoft Copilot, Anthropic Claude, OpenAI, AWS, Google." Disclose AI use explicitly in
+  the PR description if it contributed meaningfully, and use GitHub's co-author feature
+  where applicable -- the policy's own example is "Co-authored-by: Claude
+  <claude@anthropic.com>", which is exactly what attrs, pip, Requests, Kubernetes, Homebrew
+  and Bevy close pull requests for. The named failure mode is a loop with no human in it:
+  contributor prompts an LLM, reviewer prompts an LLM, LLM says LGTM, code enters the
+  codebase that no human has read.
+sources:
+  - https://github.com/openedx/.github/blob/master/AI_POLICY.md
+confidence: verified
+updated: 2026-08-29
