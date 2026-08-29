@@ -113,8 +113,9 @@ There is no format war here. If you already have an `AGENTS.md`, put the block i
 
 Every entry carries a `confidence`:
 
-- **`verified`** — checked against the primary source. Currently 11: Linux Kernel, LLVM,
-  Rust, CPython, Django, curl, QEMU, ASF (org-wide), attrs, Electron, KubeVirt.
+- **`verified`** — checked against the primary source. Currently 21: Linux Kernel, LLVM,
+  Kubernetes, Rust, CPython, Django, NumPy, SciPy, SymPy, PyTorch, curl, Homebrew,
+  Ghostty, Bevy, QEMU, Gentoo, Zig, ASF (org-wide), attrs, Electron, KubeVirt.
 - **`imported`** — derived from the excellent
   [melissawm/open-source-ai-contribution-policies](https://github.com/melissawm/open-source-ai-contribution-policies)
   list (CC0-1.0), whose author notes the classification "is, in many cases, inadequate".
@@ -128,22 +129,33 @@ contribution to this project** — see [registry/README.md](registry/README.md).
 Numbers from the 177 policies currently in the registry, reproducible with
 `ai-contrib list --json`:
 
-- **97 of 177 projects (55%) do not accept AI-assisted contributions at all.** The
-  loudest debate is about how to disclose AI use; the majority answer is "don't".
-- Among the 77 that do allow it, **75 require a human in the loop** — the one thing
-  the ecosystem agrees on, at 97%.
-- Only 44 of those 77 require disclosure. Human responsibility is near-universal;
-  disclosure is not.
-- Just 4 projects mandate a specific commit trailer and 2 forbid one — and those two
-  groups contradict each other. The Linux kernel requires `Assisted-by:` and bars agents
-  from adding `Signed-off-by:`; attrs closes any PR naming an LLM in `Co-authored-by:`.
-  There is no convention to follow, only per-project rules to look up.
-- **23% of registry entries are not on GitHub** (36 of 158 with a known repository),
-  led by Codeberg with 21. Any solution that only works on one forge misses the part of
-  the ecosystem with the strongest opinions.
+- **96 of 177 projects (54%) do not accept AI-assisted contributions at all.** The public
+  debate is about how to disclose AI use; the majority answer is "don't bother".
+- Among the 81 that allow it in some form, **77 require a human in the loop** — the one
+  thing the ecosystem agrees on, at 95%. Only 46 require disclosure. Human responsibility
+  is the consensus; disclosure is not.
+- **The commit-trailer conventions actively contradict each other.** Among the 21 entries
+  verified against primary sources:
 
-Caveat: 166 of these entries are `imported` and reflect a third-party summary. Treat the
-distribution as a strong signal and any single entry as a hint.
+  | | projects |
+  |---|---|
+  | **require** `Assisted-by:` | Linux Kernel, LLVM, Electron, KubeVirt |
+  | **forbid** `Assisted-by:` | Kubernetes, Homebrew |
+  | **forbid** an LLM in `Co-authored-by:` | attrs, Kubernetes, Homebrew, Bevy |
+
+  The Linux kernel requires the exact trailer Kubernetes and Homebrew reject, and bars
+  agents from adding the `Signed-off-by:` that Homebrew also rejects. A contributor who
+  learns one convention gets rejected by the next project. There is no convention here to
+  follow — only per-project rules to look up, which is the entire case for this tool.
+
+- 10 projects explicitly ban autonomous agents, including LLVM (which names the GitHub
+  `@claude` agent), Django (which bans automated AI reviews on PRs), NumPy and SciPy.
+- **23% of registry entries are not on GitHub** (36 of 158 with a known repository), led by
+  Codeberg with 21. Any solution that works on one forge only misses the part of the
+  ecosystem with the strongest opinions.
+
+Caveat: 156 of these entries are `imported` and reflect a third-party summary. Treat the
+distribution as a strong signal and any single unverified entry as a hint.
 
 ## Status
 
