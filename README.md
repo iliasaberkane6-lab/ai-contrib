@@ -113,9 +113,11 @@ There is no format war here. If you already have an `AGENTS.md`, put the block i
 
 Every entry carries a `confidence`:
 
-- **`verified`** — checked against the primary source. Currently 21: Linux Kernel, LLVM,
-  Kubernetes, Rust, CPython, Django, NumPy, SciPy, SymPy, PyTorch, curl, Homebrew,
-  Ghostty, Bevy, QEMU, Gentoo, Zig, ASF (org-wide), attrs, Electron, KubeVirt.
+- **`verified`** — checked against the primary source by hand. Currently 31: Linux Kernel,
+  LLVM, Kubernetes, Rust, CPython, Django, NumPy, SciPy, SymPy, pandas, PyTorch, pip,
+  Requests, curl, Homebrew, Firefox, Ghostty, Gitea, Jellyfin, Zulip, Cilium,
+  typescript-eslint, Bevy, Electron, KubeVirt, attrs, QEMU, Servo, Gentoo, Zig,
+  ASF (org-wide).
 - **`imported`** — derived from the excellent
   [melissawm/open-source-ai-contribution-policies](https://github.com/melissawm/open-source-ai-contribution-policies)
   list (CC0-1.0), whose author notes the classification "is, in many cases, inadequate".
@@ -141,20 +143,32 @@ Numbers from the 177 policies currently in the registry, reproducible with
   |---|---|
   | **require** `Assisted-by:` | Linux Kernel, LLVM, Electron, KubeVirt |
   | **forbid** `Assisted-by:` | Kubernetes, Homebrew |
-  | **forbid** an LLM in `Co-authored-by:` | attrs, Kubernetes, Homebrew, Bevy |
+  | **forbid** an LLM in `Co-authored-by:` | attrs, pip, Requests, Kubernetes, Homebrew, Bevy |
 
   The Linux kernel requires the exact trailer Kubernetes and Homebrew reject, and bars
   agents from adding the `Signed-off-by:` that Homebrew also rejects. A contributor who
   learns one convention gets rejected by the next project. There is no convention here to
   follow — only per-project rules to look up, which is the entire case for this tool.
 
-- 10 projects explicitly ban autonomous agents, including LLVM (which names the GitHub
-  `@claude` agent), Django (which bans automated AI reviews on PRs), NumPy and SciPy.
+- **Several projects that welcome AI in code forbid it in conversation.** pandas, Gitea,
+  Jellyfin, typescript-eslint, SymPy and NumPy all draw the same line: use AI to write the
+  patch, never to answer a reviewer. pandas puts it plainly — "Copying and pasting
+  AI-written replies does not count as engaging with a reviewer." Homebrew and Kubernetes
+  go further and will close a PR whose author does not respond personally. The scarce
+  resource being protected is maintainer attention, not code quality.
+- 14 projects explicitly ban autonomous agents, including LLVM (which names the GitHub
+  `@claude` agent), Django (which bans automated AI reviews on PRs), NumPy, SciPy, pip and
+  Requests. pip and Requests go furthest: "Accounts that exercise bot-like behavior — like
+  automated mass pull requests — will be permanently banned."
+- Disclosure requirements vary in granularity by an order of magnitude. pandas is the
+  strictest: name the tool, the model and version, and the reasoning-effort setting, because
+  "`claude opus 4.8 (xhigh)` tells us something, `claude` does not." Most projects that
+  require disclosure ask only that you mention it.
 - **23% of registry entries are not on GitHub** (36 of 158 with a known repository), led by
   Codeberg with 21. Any solution that works on one forge only misses the part of the
   ecosystem with the strongest opinions.
 
-Caveat: 156 of these entries are `imported` and reflect a third-party summary. Treat the
+Caveat: 146 of these entries are `imported` and reflect a third-party summary. Treat the
 distribution as a strong signal and any single unverified entry as a hint.
 
 ## Status
