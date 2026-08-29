@@ -2,6 +2,8 @@ import { EXIT_CODES } from "./types.js";
 import type { Policy, PolicyOrigin, Stance, Verdict } from "./types.js";
 
 export interface EvaluateOptions {
+  /** What to call the project in messages when the policy carries no name. */
+  target?: string;
   /** The contribution is being made by an agent acting without a human in the loop. */
   autonomous?: boolean;
   /** Which area of the project is being touched, e.g. "docs". Selects a `scope` override. */
@@ -21,7 +23,7 @@ export function evaluate(
 ): Verdict {
   const stance = effectiveStance(policy, opts.scope);
   const scoped = opts.scope && policy.scope?.[opts.scope] ? ` for scope '${opts.scope}'` : "";
-  const name = policy.project ?? "This project";
+  const name = policy.project ?? opts.target ?? "This project";
   const requirements: string[] = [];
   const advisories: string[] = [];
 
@@ -39,7 +41,8 @@ export function evaluate(
     return build("forbidden", `${name} does not accept AI-assisted contributions${scoped}.`);
   }
   if (stance === "unspecified") {
-    return build("unknown", `No AI contribution policy found for ${name}. Absence of a policy is not permission — ask a maintainer.`);
+    const subject = policy.project ?? opts.target ?? "this project";
+    return build("unknown", `No AI contribution policy found for ${subject}. Absence of a policy is not permission — ask a maintainer.`);
   }
   if (stance === "restricted") {
     return build("restricted", `${name} accepts AI-assisted contributions only under narrow conditions${scoped}. A human must confirm this case.`);

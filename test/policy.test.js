@@ -128,3 +128,9 @@ test("registry: verified entries outrank the importer", () => {
 test("parse: rejects malformed YAML with a PolicyError", () => {
   assert.throws(() => parsePolicyDocument("version: 1\n  bad indent: ["), PolicyError);
 });
+
+test("verdict: an unnamed project is described by its target, not 'This project'", () => {
+  const v = evaluate({ version: 1, stance: "unspecified" }, { kind: "none" }, { target: "acme/widget" });
+  assert.ok(v.summary.startsWith("No AI contribution policy found for acme/widget."), v.summary);
+  assert.ok(!v.summary.includes("This project"));
+});

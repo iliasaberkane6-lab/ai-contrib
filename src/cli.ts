@@ -137,7 +137,7 @@ async function main(argv: string[]): Promise<number> {
   const target = args[0] ?? ".";
 
   const { policy, origin, slug } = await resolvePolicy(target, { offline });
-  const verdict = evaluate(policy, origin, { autonomous, scope });
+  const verdict = evaluate(policy, origin, { autonomous, scope, target: slug ?? target });
 
   if (json) {
     console.log(JSON.stringify({ target, slug, ...verdict }, null, 2));
